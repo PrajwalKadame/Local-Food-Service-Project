@@ -27,13 +27,13 @@ public class ProductController {
 	}
 	
 	@GetMapping("/viewProductsByCompanyId/{company_id}")
-	public List<Product> getProducts(@PathVariable int company_id) {
+	public List<Product> viewProducts1(@PathVariable int company_id) {
 		return productRepo.findByProducts(company_id);
 	}
 	
 	
 	@GetMapping("/viewHouseByCompanyId&houseId/{company_id}/{house_id}")
-	public List<Product> getByProducts1(@PathVariable int company_id, @PathVariable int house_id) {
+	public List<Product> viewProducts2(@PathVariable int company_id, @PathVariable int house_id) {
 		return productRepo.findByProducts1(company_id, house_id);
 	}
 	
@@ -49,7 +49,7 @@ public class ProductController {
 	}
 	
 	@DeleteMapping("/delete/{company_id}/{house_id}/{product_id}")
-	public String deleteByCompanyIdAndHouseIdAndProductId(@PathVariable int company_id, @PathVariable int house_id, @PathVariable int product_id) {
+	public String deleteProduct(@PathVariable int company_id, @PathVariable int house_id, @PathVariable int product_id) {
 		productRepo.deleteByCompanyIdAndHouseIdAndProductId(company_id, house_id, product_id);
 		return "Deleted";
 	}

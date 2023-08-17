@@ -29,13 +29,13 @@ public class HouseController {
 	}
 	
 	@GetMapping("/viewHousesByCompanyId/{company_id}")
-	public List<House> getHouses(@PathVariable int company_id) {
+	public List<House> viewHouses1(@PathVariable int company_id) {
 		return houseRepo.findByHouses(company_id);
 	}
 	
 	
 	@GetMapping("/viewHouseByCompanyId&houseNo/{company_id}/{house_number}")
-	public List<House> getByHouses1(@PathVariable int company_id, @PathVariable String house_number) {
+	public List<House> viewHouses2(@PathVariable int company_id, @PathVariable String house_number) {
 		return houseRepo.findByHouse1(company_id, house_number);
 	}
 	
@@ -46,7 +46,7 @@ public class HouseController {
 	}
 	
 	@DeleteMapping("/delete/{company_id}/{house_id}")
-	public String deleteByCompanyIdAndHouseId(@PathVariable int company_id, @PathVariable int house_id) {
+	public String deleteHouse(@PathVariable int company_id, @PathVariable int house_id) {
 		houseRepo.deleteByCompanyIdAndHouseId(company_id, house_id);
 		return "Deleted";
 	}

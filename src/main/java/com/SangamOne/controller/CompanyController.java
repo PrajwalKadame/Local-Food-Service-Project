@@ -26,22 +26,22 @@ public class CompanyController {
 	}
 		
 	@GetMapping("/viewCompanies")
-	public List<Company> viewAllCompany() {
+	public List<Company> viewAllCompanies() {
 		return companyRepo.findAll();	
 	}
 	
 	@GetMapping("/{company_id}")
-	public Company getCompany(@PathVariable("company_id") int company_id) {
+	public Company viewCompanies1(@PathVariable("company_id") int company_id) {
 		return companyRepo.findById(company_id).get();
 	}
 	
 	@GetMapping("/getCompanyByCompanyName/{name}")
-	public List<Company> getByCompany(@PathVariable String name) {
+	public List<Company> viewCompanies2(@PathVariable String name) {
 		return companyRepo.findByCompany(name);
 	}
 
 	@DeleteMapping("/delete/{company_id}")
-	public String deleteById(@PathVariable("company_id") int company_id) {
+	public String deleteCompany(@PathVariable("company_id") int company_id) {
 		companyRepo.deleteById(company_id);
 		return "Deleted";
 	}
