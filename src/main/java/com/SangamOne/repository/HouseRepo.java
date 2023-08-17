@@ -25,11 +25,11 @@ public interface HouseRepo extends JpaRepository<House, Integer>{
 //	List<House> findByHouses(int company_id);
 
 	@Query(value = "select * from houses where company_id=:company_id and house_number=:house_number", nativeQuery = true)
-	List<House> findByHouse1(int company_id, String house_number);
+	List<House> findByHouse1(@Param("company_id")int company_id, @Param("house_number")String house_number);
 
 	@Modifying
 	@Transactional
 	@Query(value = "delete from houses where company_id=:company_id and house_id=:house_id", nativeQuery = true)
-	void deleteByCompanyIdAndHouseId(int company_id, int house_id);
+	void deleteByCompanyIdAndHouseId(@Param("company_id")int company_id, @Param("house_id")int house_id);
 
 }
