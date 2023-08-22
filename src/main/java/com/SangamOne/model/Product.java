@@ -97,6 +97,11 @@ public class Product {
 		this.house_id = house_id;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [quantity=" + quantity + "]";
+	}
+
 	
 	
 

@@ -27,5 +27,8 @@ public interface ProductRepo extends JpaRepository<Product, Integer>{
 	@Query(value = "delete from products where company_id=:company_id and house_id=:house_id and product_id=:product_id", nativeQuery = true)
 	void deleteByCompanyIdAndHouseIdAndProductId(@Param("company_id") int company_id, @Param("house_id") int house_id, @Param("product_id") int product_id);
 
+	
+	//@Query(value = "select quantity, product_id, company_id, delivery_desc, house_id, house_number, price, product_desc, product_name from products where company_id=:company_id and house_id=:house_id and product_id=:product_id", nativeQuery = true)
+	//List<Product> findByProductsQuantity(@Param("company_id") int company_id, @Param("house_id") int house_id, @Param("product_id") int product_id);
 
 }

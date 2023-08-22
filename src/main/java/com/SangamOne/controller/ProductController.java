@@ -32,10 +32,19 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("/viewHouseByCompanyId&houseId/{company_id}/{house_id}")
+	@GetMapping("/viewProductByCompanyId&houseId/{company_id}/{house_id}")
 	public List<Product> viewProducts2(@PathVariable int company_id, @PathVariable int house_id) {
 		return productRepo.findByProducts1(company_id, house_id);
 	}
+	
+//	@GetMapping("/viewProductQuantity/{company_id}/{house_id}/{product_id}")
+//	public List<Product> viewProductsQuantity(@PathVariable int company_id, @PathVariable int house_id, @PathVariable int product_id){
+//		System.out.println(productRepo.findByProductsQuantity(company_id, house_id, product_id));
+//		System.out.println("...............................................");
+//		return productRepo.findByProductsQuantity(company_id, house_id, product_id);
+//	}
+	
+	
 	
 //	@GetMapping("/viewHouseByCompanyId&houseNumber/{company_id}/{house_number}")
 //	public List<Product> getByProducts2(@PathVariable int company_id, @PathVariable String house_number) {
