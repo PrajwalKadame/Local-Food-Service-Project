@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "product": "masala dosa",
+      "pQty": "12",
+      "price": "50",
+      "id": 3
+    },
+    {
+      "product": "panipuri",
+      "pQty": "3",
+      "price": "90",
+      "id": 4
+    },
+    {
+      "product": "idli",
+      "pQty": "3",
+      "price": "30",
+      "id": 5
+    }
+  ]
+}
